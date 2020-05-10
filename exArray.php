@@ -1,4 +1,4 @@
-<p>Verificar se um elemento existe dentro de uma array com o uso de in_array</p>
+<p>Verificar se um nome existe dentro de uma array com o uso de in_array</p>
 <form action="exArray.php" method="POST">
 Digite um nome <input type="text" name="pessoa">
 <input type="submit">
