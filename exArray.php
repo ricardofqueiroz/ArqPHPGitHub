@@ -14,14 +14,17 @@ ini_set('display_errors',false);
 //Construindo duas arrays
 $nomes=array('Alex', 'Beatriz', 'Cassia', 'Denis', 'Evandro', 'Fabio');
 $nomes2=array('Gustavo', 'Henrique', 'Igor', 'João', 'Luan', 'Mateus');
-//if(isset($_POST["pessoa"])); - Informa se a variável foi definida
+
+//if(isset($_POST["pessoa"])); -> Informa se a variável foi definida
 $pessoa=$_POST["pessoa"];
 //$contar=0;
+
 //if (in_array($_POST['pessoa'], $nomes))
 if (in_array($pessoa, $nomes))
 {
 echo "Pertence a 1º lista de nomes";
 }
+//else if (in_array($_POST['pessoa'], $nomes2))
 else if (in_array($pessoa, $nomes2))
 {
 echo "Pertence a 2º lista de nomes";
@@ -31,5 +34,6 @@ else //if (is_null($pessoa)) - Sintaxe que informa se a variável de entrada est
 echo "Esse nome não pertence a nenhuma lista ou foi digitado nada"; echo "<br>";
 echo "Digite novamente";
 }
+//echo "<br>";
 //var_dump($_POST);
 ?>
