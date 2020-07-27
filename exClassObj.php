@@ -1,11 +1,13 @@
 <p>EXEMPLO DE CRIAÇÃO DE CLASSE</p>
+
 <form method="POST">
-	<p>Digite os produtos</p>
+<p>Digite os produtos</p>
 <input type="text" name="Produto1">
 <input type="text" name="Produto2">
 <input type="text" name="Produto3">
 <input type="submit" value="inserir">
 </form>
+
 <?php 
 //Um exemplo prático de classe e objeto
 ini_set('display_errors',false);
@@ -27,7 +29,6 @@ class Supermercado
 	{
 		//Retornar referenciando os produtos
 		return "Os produtoos da compra sao: ". $this->Produto1.", ".$this->Produto2." e ".$this->Produto3;
-		//return $this->Produto1. $this->Produto2. $this->Produto3;
 	}
 
 }
@@ -42,7 +43,9 @@ $Compras->Produto3=$Produto3;
 //Informar e referenciar os atributos que serão comprados da função comprar
 echo $Compras->comprar();
 ?>
+
 <P>EXEMPLO DE CRIAÇÃO DE ATRIBUTOS PRIVADO</p>
+
 <p>COMPONENTES DO COMPUTADOR</p>
 <form method="POST">
     Tipo de processador
@@ -59,6 +62,7 @@ echo $Compras->comprar();
     <br>
     <input type="submit" value="inserir">
 </form>
+
 <?php
 ini_set('display_errors', false);
 $processador=$_POST['processador'];
@@ -143,13 +147,8 @@ class Computador
 }
 //Criando um objeto para chamar a classe "Computador"
 $tecnologia=new Computador();
+
 //Instanciando e definindo os valores de cada atributo
-/*
-$tecnologia->setProcessador("intel Core i7");
-$tecnologia->setDiscoRigido("500 GB");
-$tecnologia->setMemoria("4 GB");
-$tecnologia->setEntrada("USB, HDMI");
-*/
 $tecnologia->setProcessador($processador);
 $tecnologia->setDiscoRigido($DiscoRigido);
 $tecnologia->setMemoria($memoria);
@@ -161,6 +160,6 @@ $tecnologia->setEntrada($entrada);
 //Visualizar na tela as informações com array
 echo "Infomaççoes dos componentes do computador";
 echo "<br>";
-//echo var_dump($tecnologia->ExibirInformacao());
-print_r($tecnologia->ExibirInformacao());
+echo var_dump($tecnologia->ExibirInformacao());
+//print_r($tecnologia->ExibirInformacao());
 ?>
