@@ -229,7 +229,7 @@ outro tipo de resultado.*/
     Digite o 2º Valor
     <input type="number" name="valor2">
     <br>
-    Inserir os valores para o resultado
+    Inserir os valores para o resultado da multiplicação
     <input type="submit" value="inserir">
 </form>
 
