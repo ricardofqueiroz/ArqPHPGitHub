@@ -44,6 +44,8 @@ $Compras->Produto3=$Produto3;
 echo $Compras->comprar();
 ?>
 
+<p>======================================================================================</p>
+
 <P>EXEMPLO DE CRIAÇÃO DE ATRIBUTOS PRIVADO</p>
 
 <p>COMPONENTES DO COMPUTADOR</p>
@@ -162,4 +164,110 @@ echo "Infomaççoes dos componentes do computador";
 echo "<br>";
 echo var_dump($tecnologia->ExibirInformacao());
 //print_r($tecnologia->ExibirInformacao());
+?>
+
+<p>======================================================================================</p>
+
+<p>EXEMPLO DE CRIAÇÃO DE CLASSE COM CONDIÇÃO</p>
+
+<form method="POST">
+    Digite um número
+    <input type="number" name="valor_escolhido">
+    <br>
+    Inserir número
+    <input type="submit" value="inserir">
+</form>
+<?php
+ini_set("display_errors", false);
+$valor_escolhido=$_POST['valor_escolhido'];
+
+//Definindo a classe
+class ConfereValor
+{
+    //Definindo um atributo de nº esperado
+    private $numEsperado=50;
+    
+    public function getNumEsperado()
+    {
+        return $this->numEsperado;
+    }
+    public function setNumEsperado($numEsperado)
+    {
+        //Fazer uma comparação, se o nº escolhido for maior ou igual que o esperado é um nº válido, se for menor é invalido 
+        if ($numEsperado>=50)
+        {
+            $this->numEsperado=$numEsperado;
+            //echo "Valor maior ou igual a 50";
+            //echo "<br>";
+            }
+                else if($numEsperado<50)
+            {
+                echo "Numero invalido.";
+                echo "<br>";
+            }
+        }
+    }
+    
+//Criando um objeto
+$Verifica=new ConfereValor();
+$Verifica->setNumEsperado($valor_escolhido);
+echo "O valor esperado tem que ser igual ou maior a 50: ", "Valor digitado foi: ", $valor_escolhido; //$Verifica->getNumEsperado();
+
+/*Nesse exemplo foi testado com o resultado no navegador trazendo o objeto $Verifica junto com o getNumEsperado, que é o correto,
+porém foi realizado um teste trazendo apenas o objeto $Verifica com a variável de entrada de usuário $valor_escolhido obtendo um
+outro tipo de resultado.*/
+?>
+
+<p>======================================================================================</p>
+
+<p>OUTRO EXEMPLO DE CRIAÇÃO DE CLASSE COM CONDIÇÃO</p>
+
+<form method="POST">
+    Digito o 1º valor
+    <input type="number" name="valor1">
+    <br>
+    Digite o 2º Valor
+    <input type="number" name="valor2">
+    <br>
+    Inserir os valores para o resultado
+    <input type="submit" value="inserir">
+</form>
+
+<?php
+ini_set("display_errors", false);
+$valor1=$_POST['valor1'];
+$valor2=$_POST['valor2'];
+$resul=$valor1*$valor2;
+
+class Resultado
+{
+    //Criar um atributo de um valor esperado
+    private $valorEperado=40;
+    
+    public function getValorEsperado()
+    {
+        return $this->valorEperado;
+    }
+    public function setValorEsperado($valorEsperado)
+    {
+        if($valorEsperado == 40)
+        {
+            echo "Valor confere a 40";
+            $this->valorEsperado=$valorEsperado;
+            echo "<br>";
+        }
+        else if($valorEsperado != 40)
+        {
+            echo "Diferente, valor não confere";
+            echo "<br>";
+        }
+        
+    } 
+}
+
+//Criando um objeto
+
+$Verifica=new Resultado();
+$Verifica->setValorEsperado($resul);
+echo "O resultado da multiplicação tem que ser igual a: ", $Verifica->getValorEsperado();
 ?>
