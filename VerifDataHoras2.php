@@ -1,3 +1,9 @@
+<html>
+<head>
+	<title>FUSO HORÁRIO MUNDIAL</title>
+</head>
+<body>
+
 <p>VERIFICANDO FUSO HORÁRIO</p>
 <form action="VerifDataHoras2.php" method="POST">
 	<input type="text" name="Fuso">
@@ -26,3 +32,5 @@ else if($Fuso != $SeuFuso)
 	echo "Hora local da regiao: $Fuso: " , date("H:i"); 
 }
 ?>
+</body>
+</html>
